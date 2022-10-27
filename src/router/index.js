@@ -6,11 +6,11 @@ const router = createRouter({
     history:createWebHashHistory(),
     routes:[
         {
-            path:'/',
+            path:'/:leftlist(.*)',
             component:leftlist
         },
         {
-            path: '/404',
+            path:'/:pathMatch(.*)',
             name: '/404',
             component: NotFound
         },
