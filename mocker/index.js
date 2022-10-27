@@ -5,43 +5,43 @@ const proxy = {
     'GET /api/user/leftlist': [
         {
             "name": "All Items",
-            "url": "/imgs/adobe.svg",
+            "image": "/imgs/items.svg",
         },
         {
             "name": "Favoites",
-            "url": "/imgs/BSApple.svg",
+            "image": "/imgs/favourites.svg",
         },
         {
             "name": "Trash",
-            "url": "/imgs/Dribbble.svg",
+            "image": " /imgs/trash.svg",
         },
         {
             "name": "Login",
-            "url": "/imgs/etsy.svg",
+            "image": " /imgs/login.svg",
         },
         {
             "name": "Card",
-            "url": "/imgs/Facebook.svg",
+            "image": " /imgs/card.svg",
         },
         {
             "name": "Identity",
-            "url": "/imgs/Google.svg",
+            "image": "/imgs/indetity.svg",
         },
         {
             "name": "Secure Note",
-            "url": "/imgs/IMDB.svg"
+            "image": "/imgs/securenote.svg"
         },
         {
             "name": "Work",
-            "url": "/imgs/Invisionapp.svg"
+            "image": "/imgs/work.svg"
         },
         {
             "name": "Social ",
-            "url": "/imgs/Invisionapp.svg"
+            "image": "/imgs/social.svg"
         },
         {
             "name": "Personal",
-            "url": "/imgs/Telegram.svg"
+            "image": "/imgs/personal.svg"
         }
     ],
 }
