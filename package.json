@@ -23,7 +23,9 @@
     "compression-webpack-plugin": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "mocker-api": "^2.9.5"
+    "mocker-api": "^2.9.5",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.1.0"
   },
   "eslintConfig": {
     "root": true,
