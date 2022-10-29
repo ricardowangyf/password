@@ -1,20 +1,46 @@
-import { createRouter,createWebHashHistory } from 'vue-router';
-import leftlist from '../view/leftlist.vue' 
-import NotFound from '../view/NotFound.vue'
+import { createRouter, createWebHashHistory } from 'vue-router';
+import leftlist from '../view/leftlist.vue' //左侧菜单列表
+import NotFound from '../view/NotFound.vue' //404页面
+import middlelist from '../view/middlelist.vue' //列表页面
+import DetailPage from '../view/DetailPage.vue' //详情页
+
 
 const router = createRouter({
-    history:createWebHashHistory(),
-    routes:[
+  history: createWebHashHistory(),
+  mode: 'history',
+  linkActiveClass: 'is-active',
+  routes: [
+    {
+      path: '/',
+      redirect: '/list/all',
+      component: leftlist,
+      children: [
         {
-            path:'/:leftlist(.*)',
-            component:leftlist
+          path: 'list/:type',
+          component: middlelist,
+          props: true
         },
         {
-            path:'/:pathMatch(.*)',
-            name: '/404',
-            component: NotFound
+          path: 'list/:type/detail/:name',
+          component: middlelist,
+          props: true
         },
-    ]
+        {
+            path: 'DetailPage',
+            component: DetailPage,
+        },
+        {
+          path: 'middlelist',
+          component: middlelist,
+        },
+      ]
+    },
+    {
+      path: '/',
+      name: '404',
+      component: NotFound
+    },
+  ]
 });
 
-export default router; //暴露router路由
+export default router;
