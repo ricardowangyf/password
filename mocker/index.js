@@ -1,47 +1,67 @@
 const delay = require('mocker-api/lib/delay');
 const noProxy = process.env.NO_PROXY === 'true';
 
+const user = require('./detalis');
+const save = require('./save.js');
+
 const proxy = {
-    'GET /api/user/leftlist': [
+
+    ...user,
+    ...save,
+    
+    'GET /api/user/list': [
         {
-            "name": "All Items",
-            "image": "/imgs/items.svg",
+            "name": "Adobe",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/adobe.svg",
+            "Trash": "2022/12/01",
         },
         {
-            "name": "Favoites",
-            "image": "/imgs/favourites.svg",
+            "name": "Apple",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/BSApple.svg",
         },
         {
-            "name": "Trash",
-            "image": " /imgs/trash.svg",
+            "name": "Dirbbble",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/Dribbble.svg",
+            "deleteAt": "2022/12/01",
+            "favorties": true,
+            "Trash": "2022/12/01",
         },
         {
-            "name": "Login",
-            "image": " /imgs/login.svg",
+            "name": "Etsy",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/etsy.svg",
+            "favorties": true,
         },
         {
-            "name": "Card",
-            "image": " /imgs/card.svg",
+            "name": "Facebook",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/Facebook.svg",
+            "Trash": "2022/12/01",
+            "favorties": true,
         },
         {
-            "name": "Identity",
-            "image": "/imgs/indetity.svg",
+            "name": "GooGle",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/Google.svg",
+            "favorties": true,
         },
         {
-            "name": "Secure Note",
-            "image": "/imgs/securenote.svg"
+            "name": "IMDB",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/IMDB.svg"
         },
         {
-            "name": "Work",
-            "image": "/imgs/work.svg"
+            "name": "InVison",
+            "email": "thomas@gmail.com",
+            "url": "/imgs/Invisionapp.svg"
         },
         {
-            "name": "Social ",
-            "image": "/imgs/social.svg"
-        },
-        {
-            "name": "Personal",
-            "image": "/imgs/personal.svg"
+            "name": "Telegram",
+            "email": "+1 202 555 0918",
+            "url": "/imgs/Telegram.svg"
         }
     ],
 }
