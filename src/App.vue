@@ -8,5 +8,8 @@ export default {
   name: 'App',
 }
 </script>
-
-<style></style>
+<style>
+html {
+  height: 100%;
+}
+</style>
