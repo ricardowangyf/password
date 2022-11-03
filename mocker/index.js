@@ -1,13 +1,16 @@
 const delay = require('mocker-api/lib/delay');
 const noProxy = process.env.NO_PROXY === 'true';
 
-const user = require('./detalis');
-const save = require('./save.js');
+const user = require('./data');
+const save = require('./save');
+const detalis = require('./detalis');
 
 
 const proxy = {
     ...user,
     ...save,
+    ...detalis,
+    
     'GET /api/user/list': [
         {
             "name": "Adobe",
