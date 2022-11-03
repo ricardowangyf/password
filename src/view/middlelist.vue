@@ -27,7 +27,11 @@
                   :title="item.name"
                   :des="item.email"
                   :eal="item.url"
-                  :class=" name === item.name || (i === 0 && !name)? 'is-active' : undefined "
+                  :class="
+                    name === item.name || (i === 0 && !name)
+                      ? 'is-active'
+                      : undefined
+                  "
                 />
               </router-link>
             </li>
@@ -42,7 +46,7 @@
 <script>
 import { reqCategoryList } from "../API/index";
 import RouterList from "../components/RouterList.vue";
-import DetailPage from "./DetailPage.vue";
+import DetailPage from "./DetailPage";
 // 在此处引用button组件
 
 export default {
@@ -50,7 +54,7 @@ export default {
   name: "reqCategoryList",
   components: {
     RouterList,
-    DetailPage
+    DetailPage,
   },
   data() {
     return {
@@ -190,7 +194,7 @@ a {
   height: 100%;
   width: calc(100% - 240px);
 }
-.middleheader{
+.middleheader {
   display: flex;
 }
 
@@ -224,7 +228,6 @@ a {
 }
 
 .plus {
-  margin-right: 5px;
   border-radius: 7px;
   background-color: #005fe4;
 }
@@ -250,7 +253,6 @@ a {
 
 .inputandcion {
   height: 30px;
-  margin-right: 24px;
 }
 
 .icon-img {
@@ -267,7 +269,7 @@ a {
 .sousuo {
   position: relative;
   bottom: 30px;
-  left: 3px;
+  right: 5px;
 }
 
 .sousuo {
