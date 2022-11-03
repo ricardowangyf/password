@@ -8,7 +8,7 @@ import DetailPage from '../view/DetailPage.vue' //详情页
 const router = createRouter({
   history: createWebHashHistory(),
   mode: 'history',
-  linkActiveClass: 'is-active',
+  linkActiveClass: 'active-router',
   routes: [
     {
       path: '/',
@@ -28,10 +28,6 @@ const router = createRouter({
         {
             path: 'DetailPage',
             component: DetailPage,
-        },
-        {
-          path: 'middlelist',
-          component: middlelist,
         },
       ]
     },

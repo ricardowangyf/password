@@ -7,28 +7,24 @@
           <div class="item itemcenter">
             <router-link
               to="/list/items"
-              class="is-active"
               style="border-radius: 5px"
+              class="is-active"
             >
               <li class="dispalay">
                 <img src="../assets/imgs/items.svg" class="icon" />
-                <h1 class="itemname fontsize" style="width: 75%">All items</h1>
-                <span class="number" style="padding-right: 10px">{{
-                  allNum
-                }}</span>
+                <h1 class="itemname fontsize " style="width: 75%">All items</h1>
+                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
               </li>
             </router-link>
             <router-link
-              to="/list/favorites"
               class="is-active"
+              to="/list/favorites"
               style="border-radius: 5px"
             >
               <li class="dispalay">
                 <img src="../assets/imgs/favourites.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">favorites</h1>
-                <span class="number" style="padding-right: 10px">{{
-                  allNum
-                }}</span>
+                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
               </li>
             </router-link>
             <router-link
@@ -39,9 +35,7 @@
               <li class="dispalay">
                 <img src="../assets/imgs/trash.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">Trash</h1>
-                <span class="number" style="padding-right: 10px">{{
-                  allNum
-                }}</span>
+                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
               </li>
             </router-link>
           </div>
@@ -52,7 +46,7 @@
                 <li class="name">
                   <router-link
                     to="/list/login"
-                    class="is-active flexstart trash"
+                    class="router-link-active flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/login.svg" class="icon-login" />
@@ -62,7 +56,7 @@
                 <li class="name">
                   <router-link
                     to="/list/card"
-                    class="is-active flexstart trash"
+                    class="flexstart trash router-link-active"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/card.svg" class="icon-login" />
@@ -72,7 +66,7 @@
                 <li class="name">
                   <router-link
                     to="/list/Login"
-                    class="is-active flexstart trash"
+                    class=" flexstart trash router-link-active"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/indetity.svg" class="icon-login" />
@@ -82,9 +76,8 @@
                 <li class="name">
                   <router-link
                     to="/list/Login"
-                    class="is-active flexstart trash"
-                    style="border-radius: 5px"
-                  >
+                    class="flexstart trash router-link-active"
+                    style="border-radius: 5px">
                     <img
                       src="../assets/imgs/securenote.svg"
                       class="icon-login"
@@ -102,7 +95,7 @@
                 <li class="name">
                   <router-link
                     to="/list/work"
-                    class="is-active flexstart trash"
+                    class="flexstart trash router-link-active"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
@@ -112,7 +105,7 @@
                 <li class="name">
                   <router-link
                     to="/list/card"
-                    class="is-active flexstart trash"
+                    class=" flexstart trash router-link-active"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
@@ -122,7 +115,7 @@
                 <li class="name">
                   <router-link
                     to="/list/Login"
-                    class="is-active flexstart trash"
+                    class=" flexstart trash router-link-active"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
@@ -159,12 +152,13 @@ export default {
   },
   mounted() {
     reqCategoryList().then((data) => {
-      var allNum = data.data.length || 0;
+      this.tableData = data.data;
+      var allNum = this.tableData.length || 1;
       var favoritesNum = 0;
       var trashNum = 0;
-      data.data &&
-        data.data.length > 0 &&
-        data.data.forEach((item) => {
+      this.tableData &&
+        this.tableData.length > 0 &&
+        this.tableData.forEach((item) => {
           if (item.deleteAt) {
             trashNum = trashNum + 1;
           }
@@ -175,9 +169,7 @@ export default {
       this.allNum = allNum;
       this.favoritesNum = favoritesNum;
       this.trashNum = trashNum;
-      // 单独的情况下,this指的是全局对象.
-      // 在函数中,this指的是全局对象
-      console.log( "--------->", data.data );
+      console.log("------------->", this.tableData);
     });
   },
 };
@@ -188,31 +180,26 @@ export default {
 body {
   margin: 0;
 }
-
 li {
   list-style: none;
 }
 
-.is-active {
+.router-link-active {
   text-decoration: none;
 }
 
 .scorall::-webkit-scrollbar {
-  /*滚动条整体样式*/
   width: 10px;
-  /*高宽分别对应横竖滚动条的尺寸*/
   height: 1px;
 }
 
 .scorall::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
   border-radius: 10px;
   background: #535353;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .scorall::-webkit-scrollbar-track {
-  /*滚动条里面轨道*/
   border-radius: 10px;
   background: rgb(30 30 30);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -270,11 +257,6 @@ li {
   margin-top: 3px;
 }
 
-.trash{
-  display: flex;
-  justify-content: space-between;
-}
-
 .item {
   display: flex;
   flex-direction: column;
@@ -314,7 +296,6 @@ li {
   font-size: 15px;
   padding-left: 12px;
   border-radius: 5px;
-  text-decoration: none;
 }
 
 .itemname{
