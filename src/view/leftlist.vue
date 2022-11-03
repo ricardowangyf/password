@@ -1,5 +1,5 @@
 <template>
-  <!-- 左侧菜单列表 -->
+  <!-- 菜单列表 -->
   <div class="header-main">
     <div class="header scorall">
       <div class="center padding">
@@ -8,7 +8,6 @@
             <router-link
               to="/list/items"
               style="border-radius: 5px"
-              class="is-active"
             >
               <li class="dispalay">
                 <img src="../assets/imgs/items.svg" class="icon" />
@@ -17,25 +16,23 @@
               </li>
             </router-link>
             <router-link
-              class="is-active"
               to="/list/favorites"
               style="border-radius: 5px"
             >
               <li class="dispalay">
                 <img src="../assets/imgs/favourites.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">favorites</h1>
-                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
+                <span class="number" style="padding-right: 10px">{{ favoritesNum }}</span>
               </li>
             </router-link>
             <router-link
               to="/list/trash"
-              class="is-active"
               style="border-radius: 5px"
             >
               <li class="dispalay">
                 <img src="../assets/imgs/trash.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">Trash</h1>
-                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
+                <span class="number" style="padding-right: 10px">{{ trashNum }}</span>
               </li>
             </router-link>
           </div>
@@ -184,8 +181,8 @@ li {
   list-style: none;
 }
 
-.router-link-active {
-  text-decoration: none;
+.active-router {
+  background-color: blue;
 }
 
 .scorall::-webkit-scrollbar {
@@ -358,7 +355,7 @@ li {
 }
 
 .footer {
-  padding-top: 143px;
+  padding-top: 150px;
 }
 
 .footer {
