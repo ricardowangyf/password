@@ -7,7 +7,7 @@
       <div class="password-right">
         <div class="password-jkl">
           <h1 class="name">{{ title }}</h1>
-          <h2 class="email">{{ des }}</h2>
+          <h2 class="des">{{ des }}</h2>
         </div>
       </div>
     </div>
@@ -42,21 +42,11 @@
     font-size: 15px;
   }
   
-  .email {
+  .des {
     margin: 0;
     font-size: 12px;
     color: #575d64;
   }
-  
-  .password {
-    padding: 0;
-    width: 275px;
-    background: #1e1e1e;
-    height: 65px;
-    margin: 5px 0 0 45px;
-    border: none;
-  }
-  
   .password-all {
     display: flex;
     justify-content: flex-start;
