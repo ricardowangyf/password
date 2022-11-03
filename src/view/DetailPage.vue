@@ -1,5 +1,5 @@
 <template>
-  <!-- 右侧详情页 -->
+  <!-- 详情页 -->
   <div class="wrap-right">
     <div class="max-width">
       <div class="header-right">
@@ -158,7 +158,7 @@ export default {
           console.log("--this.details---->", this.details);
         });
     },
-    
+
     //显示隐藏
     changePwd() {
       this.pwdFlag = !this.pwdFlag;
@@ -180,7 +180,7 @@ export default {
           (this.isSave = false), (this.isNone = false);
         }
         console.log("----->", data);
-        this.$message({ type: "success", message: "保存成功" })
+        this.$message({ type: "success", message: "保存成功" });
       });
     },
     //取消
@@ -191,7 +191,7 @@ export default {
       if (this.isNone) {
         this.isNone = false;
       }
-      this.$message({ type: "success", message: "取消编辑" })
+      this.$message({ type: "success", message: "取消编辑" });
     },
     //删除
     // delete(){}
@@ -204,329 +204,328 @@ export default {
 
 <style>
 img {
-    width: 45px;
-    height: 45px;
+  width: 45px;
+  height: 45px;
 }
 
 .wrap-right {
-    background-color: rgb(15, 15, 15);
-    width: calc(100% - 325px);
+  background-color: rgb(15, 15, 15);
+  width: calc(100% - 325px);
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .wrap-right {
-    overflow-y: auto;
-    height: 100vh;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .btnall {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .wrap-right .btnall .edit {
-    background-color: rgb(47 44 44);
-    width: 85px;
-    height: 30px;
-    border-radius: 5px;
+  background-color: rgb(47 44 44);
+  width: 85px;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .wrap-right .btnall .edit .icon {
-    position: relative;
-    bottom: 0px;
-    right: 13px;
-    width: 20px;
-    height: 20px;
+  position: relative;
+  bottom: 0px;
+  right: 13px;
+  width: 20px;
+  height: 20px;
 }
 
 .wrap-right .btnall .delete {
-    background-color: rgb(47 44 44);
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
+  background-color: rgb(47 44 44);
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .wrap-right .btnall .delete .icon {
-    position: relative;
-    top: 4px;
-    right: 1px;
-    width: 20px;
-    height: 20px;
+  position: relative;
+  top: 4px;
+  right: 1px;
+  width: 20px;
+  height: 20px;
 }
 
 .wrap-right .btnall .save .name {
-    color: #fff;
-    font-size: 15px;
-    position: relative;
-    right: 0px;
-    bottom: 4px;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+  right: 0px;
+  bottom: 4px;
 }
 
 .edit .name {
-    position: relative;
-    bottom: 4px;
-    color: #fff;
+  position: relative;
+  bottom: 4px;
+  color: #fff;
 }
 
 .quxiao {
-    color: #fff;
+  color: #fff;
 }
 
 .wrap-right .btnall .save .icon {
-    position: relative;
-    bottom: 0px;
-    right: 13px;
-    width: 20px;
-    height: 20px;
+  position: relative;
+  bottom: 0px;
+  right: 13px;
+  width: 20px;
+  height: 20px;
 }
 
 .wrap-right .btnall .save {
-    background-color: rgb(47 44 44);
-    width: 85px;
-    height: 30px;
-    border-radius: 5px;
+  background-color: rgb(47 44 44);
+  width: 85px;
+  height: 30px;
+  border-radius: 5px;
 }
 
 .wrap-right .btnall .delete .name {
-    color: #fff;
-    font-size: 15px;
-    position: relative;
-    padding-left: 9px;
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+  padding-left: 9px;
 }
 
 .namelogin .logicn {
-    color: rgb(131, 131, 131);
-    font-size: 13px;
+  color: rgb(131, 131, 131);
+  font-size: 13px;
 }
 
 .title-name .name {
-    background-color: rgb(15, 15, 15);
-    border-radius: 4px;
-    border: none;
-    color: #fff;
-    height: 25px;
-    width: 100%;
-    margin: 0;
-    font-size: 24px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  height: 25px;
+  width: 100%;
+  margin: 0;
+  font-size: 24px;
 }
 
-
 .main-max {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main {
-    padding: 20px 0 20px 0;
+  padding: 20px 0 20px 0;
 }
 
 .detaliwebsite {
-    font-size: 12px;
-    color: #686868;
+  font-size: 12px;
+  color: #686868;
 }
 
 .bottom-horizontalline {
-    padding-bottom: 20px;
-    border-bottom: 2px solid #3a3132db;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #3a3132db;
 }
 
 .duanluo {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .username {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .special {
-    color: #fff;
+  color: #fff;
 }
 
 .private p {
-    color: #fff;
+  color: #fff;
 }
 
 .private span {
-    color: #fff;
+  color: #fff;
 }
 
 .max-width {
-    width: 380px;
-    margin: 0 auto;
+  width: 380px;
+  margin: 0 auto;
 }
 
 .main-center {
-    padding-top: 25px;
+  padding-top: 25px;
 }
 
 .max-width button {
-    padding: 0;
-    margin: 0;
-    border: none;
-    margin-left: 15px;
-    background-color: rgb(47 44 44);
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-left: 15px;
+  background-color: rgb(47 44 44);
 }
 
 .imag {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .imag {
-    position: relative;
-    top: 8px;
-    left: 9px;
+  position: relative;
+  top: 8px;
+  left: 9px;
 }
 
 .xxx {
-    background-color: rgb(15, 15, 15);
-    border-radius: 4px;
-    border: none;
-    color: #686868;
-    height: 25px;
-    width: 100%;
-    font-size: 15px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 4px;
+  border: none;
+  color: #686868;
+  height: 25px;
+  width: 100%;
+  font-size: 15px;
 }
 
 .detaliweb {
-    background-color: rgb(15, 15, 15);
-    border-radius: 4px;
-    border: none;
-    color: #fff;
-    height: 25px;
-    width: 100%;
-    font-size: 17px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  height: 25px;
+  width: 100%;
+  font-size: 17px;
 }
 
 .bottom .duanluo .great p {
-    color: #fff;
-    font-size: 14px;
+  color: #fff;
+  font-size: 14px;
 }
 
 .png {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .dataliweb {
-    background-color: #404040;
-    border-radius: 4px;
-    border: none;
-    box-sizing: border-box;
-    color: #fff;
-    height: 32px;
-    outline: 0;
-    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    width: 20%;
-    padding-left: 15px;
+  background-color: #404040;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  height: 32px;
+  outline: 0;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 20%;
+  padding-left: 15px;
 }
 
 .word {
-    float: left;
-    font-size: 23px;
+  float: left;
+  font-size: 23px;
 }
 
 .word {
-    position: relative;
-    width: 81px;
-    top: 28px;
+  position: relative;
+  width: 81px;
+  top: 28px;
 }
 
 .margintop {
-    padding-left: 11px;
-    padding-top: 20px;
+  padding-left: 11px;
+  padding-top: 20px;
 }
 
 .margintop {
-    background-color: #404040;
-    border-radius: 4px;
-    border: none;
-    box-sizing: border-box;
-    color: #fff;
-    height: 60px;
-    outline: 0;
-    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    width: 100%;
+  background-color: #404040;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  color: #fff;
+  height: 60px;
+  outline: 0;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
 }
 
 .password {
-    margin: 0;
-    font-size: 13px;
-    padding-left: 10px;
-    color: #686868;
+  margin: 0;
+  font-size: 13px;
+  padding-left: 10px;
+  color: #686868;
 }
 
 .position {
-    position: relative;
-    top: 5px;
+  position: relative;
+  top: 5px;
 }
 
 .username {
-    width: 100%;
-    height: 80px;
+  width: 100%;
+  height: 80px;
 }
 
 .color {
-    width: 100%;
-    height: 80px;
+  width: 100%;
+  height: 80px;
 }
 
 .email {
-    background-color: rgb(15, 15, 15);
-    border-radius: 4px;
-    font-size: 15px;
-    border: none;
-    color: #fff;
-    font-size: 15px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 4px;
+  font-size: 15px;
+  border: none;
+  color: #fff;
+  font-size: 15px;
 }
 
 .email {
-    height: 25px;
-    width: 100%;
+  height: 25px;
+  width: 100%;
 }
 
 .shouandhide {
-    position: relative;
-    bottom: 45px;
-    left: 340px;
+  position: relative;
+  bottom: 45px;
+  left: 340px;
 }
 
 .shouandhide {
-    width: 35px;
-    height: 40px;
+  width: 35px;
+  height: 40px;
 }
 
 .cancela .name {
-    color: #fff;
-    font-size: 13px;
+  color: #fff;
+  font-size: 13px;
 }
 
 .cancela .name {
-    position: relative;
-    top: 2px;
+  position: relative;
+  top: 2px;
 }
 
 .cancel {
-    width: 20px;
-    height: 18px;
+  width: 20px;
+  height: 18px;
 }
 
 .cancel {
-    position: relative;
-    top: 6px;
+  position: relative;
+  top: 6px;
 }
 
 .cancela {
-    background-color: rgb(47 44 44);
-    border-radius: 5px;
+  background-color: rgb(47 44 44);
+  border-radius: 5px;
 }
 
 .cancela {
-    width: 78px;
-    height: 30px;
+  width: 78px;
+  height: 30px;
 }
 </style>
