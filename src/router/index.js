@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import leftlist from '../view/leftlist.vue' //左侧菜单列表
+import leftlist from '../view/leftlist.vue' //菜单列表
 import NotFound from '../view/NotFound.vue' //404页面
 import middlelist from '../view/middlelist.vue' //列表页面
 import DetailPage from '../view/DetailPage.vue' //详情页
@@ -8,7 +8,7 @@ import DetailPage from '../view/DetailPage.vue' //详情页
 const router = createRouter({
   history: createWebHashHistory(),
   mode: 'history',
-  linkActiveClass: 'active-router',
+  linkActiveClass: 'is-active',
   routes: [
     {
       path: '/',
