@@ -80,18 +80,26 @@
                 <h1 class="password">Password</h1>
               </div>
               <div class="clear" />
-              <input
-                :disabled="!isSave"
-                v-model="details.password"
-                :type="pwdFlag ? 'password' : 'text'"
-                size="10"
-                class="margintop"
-                autoComplete="“false”"
-              />
+              <form>
+                <input
+                  :disabled="!isSave"
+                  v-model="details.password"
+                  :type="pwdFlag ? 'password' : 'text'"
+                  size="10"
+                  id="input"
+                  class="margintop"
+                  autoComplete="“false”"
+                />
+              </form>
               <img
                 :src="pwdFlag ? textIcon : pwdIcon"
                 @click="changePwd"
                 class="shouandhide"
+              />
+              <img
+                src="../assets/imgs/copy.svg"
+                @click="copyToClip"
+                class="copybtn"
               />
             </div>
           </div>
@@ -133,9 +141,10 @@ export default {
       details: {},
       isSave: false,
       isNone: false,
+      password: "",
       pwdFlag: true, //密码标示 true表示当前是密码形式
-      textIcon: "https://i.postimg.cc/q7gYH7P7/show.png", //展示图标
-      pwdIcon: "https://i.postimg.cc/C5Crsnqc/hide.png", //隐藏图标
+      textIcon: "https://www.hualigs.cn/image/6363de49186e1.jpg", //展示图标
+      pwdIcon: "https://www.hualigs.cn/image/6363de00504c4.jpg", //隐藏图标
     };
   },
   watch: {
@@ -155,7 +164,7 @@ export default {
       name &&
         details({ name }).then((data) => {
           this.details = data.data;
-          console.log("--this.details---->", this.details);
+          console.log("--this.details-->", this.details);
         });
     },
 
@@ -173,14 +182,21 @@ export default {
       }
       // console.log('-------->', this.tableData)
     },
+    //一键复制
+    copyToClip() {
+      var passwordaaa = this.details.password;
+      var input = document.getElementById("input");
+      input.value = passwordaaa; // 要复制的文本框的内容（此处是后端返回的内容）
+      input.select(); // 选中文本
+    },
     //保存
     save() {
       save({ ...this.detali }).then((data) => {
         if (data.data && data.data.code === 1) {
           (this.isSave = false), (this.isNone = false);
+          alert("保存成功");
         }
         console.log("----->", data);
-        this.$message({ type: "success", message: "保存成功" });
       });
     },
     //取消
@@ -190,14 +206,12 @@ export default {
       }
       if (this.isNone) {
         this.isNone = false;
+        alert("取消编辑");
       }
-      this.$message({ type: "success", message: "取消编辑" });
     },
     //删除
     // delete(){}
-    Delete() {
-      this.tableData.value = "";
-    },
+    Delete() {},
   },
 };
 </script>
@@ -238,6 +252,9 @@ img {
   position: relative;
   bottom: 0px;
   right: 13px;
+}
+
+.wrap-right .btnall .edit .icon {
   width: 20px;
   height: 20px;
 }
@@ -367,6 +384,7 @@ img {
   margin: 0;
   border: none;
   margin-left: 15px;
+  border-radius: 5px;
   background-color: rgb(47 44 44);
 }
 
@@ -489,14 +507,25 @@ img {
 }
 
 .shouandhide {
-  position: relative;
-  bottom: 45px;
-  left: 340px;
+  width: 15px;
+  height: 15px;
 }
 
 .shouandhide {
-  width: 35px;
-  height: 40px;
+  position: relative;
+  bottom: 40px;
+  left: 320px;
+}
+
+.copybtn {
+  position: relative;
+  bottom: 40px;
+  left: 330px;
+}
+
+.copybtn {
+  width: 15px;
+  height: 15px;
 }
 
 .cancela .name {
