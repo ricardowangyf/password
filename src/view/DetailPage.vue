@@ -1,10 +1,10 @@
 <template>
   <!-- 详情页 -->
-  <div class="wrap-right">
+  <div class="details-head">
     <div class="max-width">
       <div class="header-right">
         <div class="btnall">
-          <button v-if="!isSave" class="edit" @click="onClickEditBtn">
+          <button v-if="!savenow" class="edit" @click="edit">
             <img src="../assets/imgs/edit.svg" class="icon" />
             <span class="name">Edit</span>
           </button>
@@ -12,7 +12,7 @@
             <img src="../assets/imgs/save.svg" class="icon" />
             <span class="name">Save</span>
           </button>
-          <button v-if="isNone" @click="cancel()">
+          <button v-if="nonenow" @click="cancel()">
             <div class="cancela">
               <img src="../assets/imgs/cancel.svg" class="cancel" />
               <span class="name cancel-name"> Cancel</span>
@@ -35,7 +35,7 @@
               />
             </div>
             <div class="title-name">
-              <input :disabled="!isSave" v-model="details.name" class="name" />
+              <input :disabled="!savenow" v-model="details.name" class="name" />
               <div class="namelogin">
                 <span class="logicn">login</span>
               </div>
@@ -67,11 +67,11 @@
             <input
               class="website xxx"
               :value="details.username"
-              :disabled="!isSave"
+              :disabled="!savenow"
             />
           </div>
           <div class="web">
-            <input class="email" v-model="details.email" :disabled="!isSave" />
+            <input class="email" v-model="details.email" :disabled="!savenow" />
           </div>
 
           <div class="username">
@@ -82,7 +82,7 @@
               <div class="clear" />
               <form>
                 <input
-                  :disabled="!isSave"
+                  :disabled="!savenow"
                   v-model="details.password"
                   :type="pwdFlag ? 'password' : 'text'"
                   size="10"
@@ -92,25 +92,24 @@
                 />
               </form>
               <img
-                :src="pwdFlag ? textIcon : pwdIcon"
+                :src="pwdFlag ? textIcon : eyesicon"
                 @click="changePwd"
                 class="shouandhide"
               />
               <img
                 src="../assets/imgs/copy.svg"
-                @click="copyToClip"
+                @click="copy"
                 class="copybtn"
               />
             </div>
           </div>
-          <div class="bottom-horizontalline">
-            <div class="detaliwebsite">
+          <div class="detaliwebsite bottom-horizontalline">
               <span>Website</span>
-            </div>
+              </div>
             <input
               :value="details.website"
               class="detaliweb"
-              :disabled="!isSave"
+              :disabled="!savenow"
             />
           </div>
           <div class="asdasdergrg">
@@ -130,7 +129,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
 import { details, save } from "../API/index";
@@ -139,12 +137,12 @@ export default {
   data() {
     return {
       details: {},
-      isSave: false,
-      isNone: false,
+      savenow: false,
+      nonenow: false,
       password: "",
       pwdFlag: true, //密码标示 true表示当前是密码形式
       textIcon: "https://www.hualigs.cn/image/6363de49186e1.jpg", //展示图标
-      pwdIcon: "https://www.hualigs.cn/image/6363de00504c4.jpg", //隐藏图标
+      eyesicon: "https://www.hualigs.cn/image/6363de00504c4.jpg", //隐藏图标
     };
   },
   watch: {
@@ -167,33 +165,32 @@ export default {
           console.log("--this.details-->", this.details);
         });
     },
-
     //显示隐藏
     changePwd() {
       this.pwdFlag = !this.pwdFlag;
     },
     //编辑
-    onClickEditBtn() {
-      if (!this.isSave) {
-        this.isSave = true;
+    edit() {
+      if (!this.savenow) {
+        this.savenow = true;
       }
-      if (!this.isNone) {
-        this.isNone = true;
+      if (!this.nonenow) {
+        this.nonenow = true;
       }
-      // console.log('-------->', this.tableData)
     },
     //一键复制
-    copyToClip() {
-      var passwordaaa = this.details.password;
+    copy() {
+      var password = this.details.password;
       var input = document.getElementById("input");
-      input.value = passwordaaa; // 要复制的文本框的内容（此处是后端返回的内容）
+      input.value = password; // 要复制的文本框的内容（此处是后端返回的内容）
       input.select(); // 选中文本
+      console.log("-------->", input);
     },
     //保存
     save() {
       save({ ...this.detali }).then((data) => {
         if (data.data && data.data.code === 1) {
-          (this.isSave = false), (this.isNone = false);
+          (this.savenow = false), (this.nonenow = false);
           alert("保存成功");
         }
         console.log("----->", data);
@@ -201,16 +198,15 @@ export default {
     },
     //取消
     cancel() {
-      if (this.isSave) {
-        this.isSave = false;
+      if (this.savenow) {
+        this.savenow = false;
       }
-      if (this.isNone) {
-        this.isNone = false;
+      if (this.nonenow) {
+        this.nonenow = false;
         alert("取消编辑");
       }
     },
     //删除
-    // delete(){}
     Delete() {},
   },
 };
@@ -222,7 +218,7 @@ img {
   height: 45px;
 }
 
-.wrap-right {
+.details-head {
   background-color: rgb(15, 15, 15);
   width: calc(100% - 325px);
 }
@@ -231,7 +227,7 @@ img {
   clear: both;
 }
 
-.wrap-right {
+.details-head {
   overflow-y: auto;
   height: 100vh;
 }
@@ -241,32 +237,32 @@ img {
   justify-content: flex-end;
 }
 
-.wrap-right .btnall .edit {
+.details-head .btnall .edit {
   background-color: rgb(47 44 44);
   width: 85px;
   height: 30px;
   border-radius: 5px;
 }
 
-.wrap-right .btnall .edit .icon {
+.details-head .btnall .edit .icon {
   position: relative;
   bottom: 0px;
   right: 13px;
 }
 
-.wrap-right .btnall .edit .icon {
+.details-head .btnall .edit .icon {
   width: 20px;
   height: 20px;
 }
 
-.wrap-right .btnall .delete {
+.details-head .btnall .delete {
   background-color: rgb(47 44 44);
   width: 90px;
   height: 30px;
   border-radius: 5px;
 }
 
-.wrap-right .btnall .delete .icon {
+.details-head .btnall .delete .icon {
   position: relative;
   top: 4px;
   right: 1px;
@@ -274,7 +270,7 @@ img {
   height: 20px;
 }
 
-.wrap-right .btnall .save .name {
+.details-head .btnall .save .name {
   color: #fff;
   font-size: 15px;
   position: relative;
@@ -292,7 +288,7 @@ img {
   color: #fff;
 }
 
-.wrap-right .btnall .save .icon {
+.details-head .btnall .save .icon {
   position: relative;
   bottom: 0px;
   right: 13px;
@@ -300,14 +296,14 @@ img {
   height: 20px;
 }
 
-.wrap-right .btnall .save {
+.details-head .btnall .save {
   background-color: rgb(47 44 44);
   width: 85px;
   height: 30px;
   border-radius: 5px;
 }
 
-.wrap-right .btnall .delete .name {
+.details-head .btnall .delete .name {
   color: #fff;
   font-size: 15px;
   position: relative;

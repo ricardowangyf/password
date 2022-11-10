@@ -5,34 +5,25 @@
       <div class="center padding">
         <div class="all-item">
           <div class="item itemcenter">
-            <router-link
-              to="/list/items"
-              style="border-radius: 5px"
-            >
+            <router-link to="/list/items" style="border-radius: 5px">
               <li class="dispalay">
-                <img src="../assets/imgs/items.svg" class="icon" />
-                <h1 class="itemname fontsize " style="width: 75%">All items</h1>
-                <span class="number" style="padding-right: 10px">{{ allNum }}</span>
+                <img src="../assets/imgs/items.svg" class="icon"  style="padding-top: 2px;"/>
+                <h1 class="itemname fontsize" style="width: 75%">All items</h1>
+                <span class="number" style="padding-right: 10px">{{allNum}}</span>
               </li>
             </router-link>
-            <router-link
-              to="/list/favorites"
-              style="border-radius: 5px"
-            >
+            <router-link to="/list/favorites" style="border-radius: 5px">
               <li class="dispalay">
                 <img src="../assets/imgs/favourites.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">favorites</h1>
-                <span class="number" style="padding-right: 10px">{{ favoritesNum }}</span>
+                <span class="number" style="padding-right: 10px">{{favoritesNum}}</span>
               </li>
             </router-link>
-            <router-link
-              to="/list/trash"
-              style="border-radius: 5px"
-            >
+            <router-link to="/list/trash" style="border-radius: 5px">
               <li class="dispalay">
                 <img src="../assets/imgs/trash.svg" class="icon" />
                 <h1 class="itemname fontsize" style="width: 75%">Trash</h1>
-                <span class="number" style="padding-right: 10px">{{ trashNum }}</span>
+                <span class="number" style="padding-right: 10px">{{trashNum}}</span>
               </li>
             </router-link>
           </div>
@@ -40,48 +31,41 @@
             <span class="type">Type</span>
             <div class="itemtype">
               <div class="typetop">
-                <li class="name">
                   <router-link
                     to="/list/login"
-                    class="router-link-active flexstart trash"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/login.svg" class="icon-login" />
                     <h1 class="itemstypename">Login</h1>
                   </router-link>
-                </li>
-                <li class="name">
                   <router-link
                     to="/list/card"
-                    class="flexstart trash router-link-active"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/card.svg" class="icon-login" />
                     <h1 class="itemstypename">Card</h1>
                   </router-link>
-                </li>
-                <li class="name">
                   <router-link
-                    to="/list/Login"
-                    class=" flexstart trash router-link-active"
+                    to="/list/identity"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/indetity.svg" class="icon-login" />
                     <h1 class="itemstypename">Identity</h1>
                   </router-link>
-                </li>
-                <li class="name">
                   <router-link
-                    to="/list/Login"
-                    class="flexstart trash router-link-active"
-                    style="border-radius: 5px">
+                    to="/list/securenote"
+                    class="flexstart trash"
+                    style="border-radius: 5px"
+                  >
                     <img
                       src="../assets/imgs/securenote.svg"
                       class="icon-login"
                     />
                     <h1 class="itemstypename">Secure Note</h1>
                   </router-link>
-                </li>
               </div>
             </div>
           </div>
@@ -89,49 +73,43 @@
             <span class="type">Folders</span>
             <div class="itemtype">
               <div class="typetop">
-                <li class="name">
                   <router-link
                     to="/list/work"
-                    class="flexstart trash router-link-active"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
                     <h1 class="itemstypename">Work</h1>
                   </router-link>
-                </li>
-                <li class="name">
                   <router-link
-                    to="/list/card"
-                    class=" flexstart trash router-link-active"
+                    to="/list/social"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
                     <h1 class="itemstypename">Social</h1>
                   </router-link>
-                </li>
-                <li class="name">
                   <router-link
-                    to="/list/Login"
-                    class=" flexstart trash router-link-active"
+                    to="/list/personal"
+                    class="flexstart trash"
                     style="border-radius: 5px"
                   >
                     <img src="../assets/imgs/work.svg" class="icon-login" />
                     <h1 class="itemstypename">Personal</h1>
                   </router-link>
-                </li>
               </div>
             </div>
           </div>
         </div>
         <div class="footer">
-            <li class="newfolder neirong">
-              <img src="../assets/imgs/newfolder.svg" class="icon" />
-              <span class="folder">NewFolder</span>
-            </li>
+          <li class="newfolder neirong">
+            <img src="../assets/imgs/newfolder.svg" class="icon" />
+            <span class="folder">NewFolder</span>
+          </li>
         </div>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
@@ -143,19 +121,18 @@ export default {
   data() {
     return {
       allNum: 0,
-      trashNum: 0,
       favoritesNum: 0,
+      trashNum: 0,
     };
   },
   mounted() {
     reqCategoryList().then((data) => {
-      this.tableData = data.data;
-      var allNum = this.tableData.length || 1;
+      var allNum = data.data.length || 0;
       var favoritesNum = 0;
       var trashNum = 0;
-      this.tableData &&
-        this.tableData.length > 0 &&
-        this.tableData.forEach((item) => {
+      data.data &&
+        data.data.length > 0 &&
+        data.data.forEach((item) => {
           if (item.deleteAt) {
             trashNum = trashNum + 1;
           }
@@ -166,23 +143,18 @@ export default {
       this.allNum = allNum;
       this.favoritesNum = favoritesNum;
       this.trashNum = trashNum;
-      console.log("------------->", this.tableData);
+      console.log("---data.data--->", data.data);
     });
   },
 };
 </script>
 
 <style>
-
 body {
   margin: 0;
 }
 li {
   list-style: none;
-}
-
-.active-router {
-  background-color: blue;
 }
 
 .scorall::-webkit-scrollbar {
@@ -291,11 +263,11 @@ li {
   margin: 0;
   margin-top: 1px;
   font-size: 15px;
-  padding-left: 12px;
+  padding-left: 5px;
   border-radius: 5px;
 }
 
-.itemname{
+.itemname {
   width: 77%;
 }
 
@@ -320,7 +292,7 @@ li {
 }
 
 .typetop {
-  padding-top: 6px;
+  padding-top: 10px;
 }
 
 .name {
@@ -349,13 +321,13 @@ li {
   margin: 0;
   margin-top: 1px;
   font-size: 15px;
-  padding-left: 25px;
+  padding-left: 15px;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .footer {
-  padding-top: 150px;
+  padding: 155px 0 20px 0;
 }
 
 .footer {
