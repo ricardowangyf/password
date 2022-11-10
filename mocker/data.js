@@ -77,7 +77,7 @@ exports.list = [
   {
       "name": "InVison",
       "password": "htaheth",
-      "imgrul": "/image/Invisionapp.svg",
+      "imgrul": "/image/Invision.svg",
       "email": "thomas@gmail.com",
       "username":"Username",
       "websitename": "InVison.com",
