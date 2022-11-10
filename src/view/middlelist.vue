@@ -1,14 +1,14 @@
 <template>
   <!--路由转跳-->
   <div class="middleheader">
-    <div class="header-width scorall">
+    <div class="middleheader-center scorall">
       <div class="middlecenter">
         <div class="serch">
           <div class="inputandcion">
             <input
               v-model.trim="keyWord"
-              class="inputcss"
-              placeholder="SearchVault"
+              class="inputstlye"
+              :placeholder="SearchVault"
             />
             <button class="sousuo" @click="serch">
               <img class="hualigs" src="../assets/imgs/search.svg" alt />
@@ -61,6 +61,7 @@ export default {
       items: [],
       name: " ",
       keyWord: " ",
+      SearchVault: "SearchVault",
     };
   },
   mounted() {
@@ -68,7 +69,7 @@ export default {
       this.tableData = data.data;
       const type = this.$route.params.type || "all";
       this.filterDatas(type, data.data);
-      console.log("-data.data->", data.data);
+      console.log("----this.tableData--->", data.data);
     });
   },
   watch: {
@@ -91,15 +92,15 @@ export default {
         for (var i = 0; i < this.tableData.length; i++) {
           if (this.tableData[i].name === this.keyWord) {
             dataLists.push(this.tableData[i]);
-            console.log("------>", this.tableData);
+            console.log("---this.tableData--->", this.tableData);
           }
         }
       } else {
         dataLists = this.tableData;
       }
       this.items = [...dataLists];
-      console.log("------->", this.items);
-      console.log("------->", dataLists);
+      console.log("---this.items--->", this.items);
+      console.log("---dataLists--->", dataLists);
     },
     filterDatas(type, list) {
       if (type === "Trash") {
@@ -109,8 +110,7 @@ export default {
       } else {
         this.items = list;
       }
-      console.log("----this--->", list);
-
+      console.log("---list--->", list);
       this.items &&
         this.items.length > 0 &&
         this.$router
@@ -144,12 +144,6 @@ img {
   width: 40px;
   height: 40px;
 }
-
-.is-active {
-    border-radius: 5px;
-    background: #005fe4;
-}
-
 a {
   text-decoration: none;
 }
@@ -175,12 +169,12 @@ a {
   background: rgb(30 30 30);
 }
 
-.button {
+.middleheader .button {
   margin: 0 auto;
   max-width: 300px;
 }
 
-.header-width {
+.middleheader-center {
   width: 325px;
   background-color: rgb(30 30 30);
 }
@@ -203,17 +197,6 @@ a {
   height: 20px;
 }
 
-.input-text {
-  color: rgb(24 24 24 / 80%);
-  background: transparent;
-  padding: 0px 20px;
-  outline: none;
-  width: 183px;
-  height: 21px;
-  background-image: url(https://tva1.sinaimg.cn/large/0074R88yly8h4parmj1u0j300k00k0d2.jpg);
-  border-radius: 10px;
-}
-
 .address {
   color: red;
 }
@@ -227,17 +210,17 @@ a {
   padding: 20px 0 25px 0;
 }
 
-.plus {
+.middlecenter .plus {
   border-radius: 7px;
   background-color: #005fe4;
 }
 
-.plus {
+.middlecenter .plus {
   width: 30px;
   height: 30px;
 }
 
-.inputcss {
+.middleheader .inputstlye {
   background-color: #404040;
   border-radius: 4px;
   border: none;
@@ -251,86 +234,98 @@ a {
   width: 100%;
 }
 
-.inputandcion {
+.middlecenter .inputandcion {
   height: 30px;
 }
 
-.icon-img {
+.middlecenter .icon-img {
   width: 20px;
   height: 20px;
 }
 
-.icon-img {
+.middlecenter .icon-img {
   position: relative;
   left: 5px;
   top: 5px;
 }
 
-.sousuo {
+.middlecenter.sousuo {
   position: relative;
   bottom: 30px;
   right: 5px;
 }
 
-.sousuo {
+.middlecenter .sousuo {
   width: 30px;
   height: 30px;
 }
 
-.sousuo {
+.middlecenter .sousuo {
   background: #404040;
   float: right;
   border: none;
 }
 
-.hualigs {
+.middlecenter .sousuo {
+  position: relative;
+  bottom: 30px;
+  right: 2px;
+}
+
+.middlecenter .hualigs {
   width: 17px;
   height: 17px;
 }
 
-.hualigs {
+.middlecenter .hualigs {
   display: flex;
   align-items: center;
 }
 
-.password-left {
+.middlecenter .password-left {
   border-radius: 5px;
 }
 
-.bottonleft {
+.middlecenter .bottonleft {
   width: 45px;
   height: 45px;
 
   border-radius: 5px;
 }
 
-.imbg {
+.middlecenter .imbg {
   width: 55px;
   height: 55px;
   position: relative;
   right: 4px;
 }
 
-.password-leftb {
+.middlecenter .password-leftb {
   background-color: rgb(211, 97, 18);
-  /* width: 30px; */
-  width: 45px;
-  height: 45px;
   border-radius: 10px;
 }
 
-.password-leftc {
-  background-color: rgb(58, 74, 140);
+.middlecenter .password-leftb {
   width: 45px;
   height: 45px;
+}
+
+.middlecenter .password-leftc {
+  background-color: rgb(58, 74, 140);
   border-radius: 10px;
+}
+.middlecenter .password-leftc {
+  width: 45px;
+  height: 45px;
 }
 
 .password-lefte {
   background-color: #efb700;
+  border-radius: 6px;
+}
+.password-lefte {
   width: 45px;
   height: 45px;
-  border-radius: 6px;
 }
 
 .imcg {
