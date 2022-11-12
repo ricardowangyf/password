@@ -1,0 +1,338 @@
+
+img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .details-head {
+    background-color: rgb(15, 15, 15);
+    width: calc(100% - 325px);
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .details-head {
+    overflow-y: auto;
+    height: 100vh;
+  }
+  
+  .btnall {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .details-head .btnall .edit {
+    background-color: rgb(47 44 44);
+    width: 85px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .details-head .btnall .edit .icon {
+    position: relative;
+    bottom: 0px;
+    right: 13px;
+  }
+  
+  .details-head .btnall .edit .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .details-head .btnall .delete {
+    background-color: rgb(47 44 44);
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .details-head .btnall .delete .icon {
+    position: relative;
+    top: 4px;
+    right: 1px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .details-head .btnall .save .name {
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    right: 0px;
+    bottom: 4px;
+  }
+  
+  .edit .name {
+    position: relative;
+    bottom: 4px;
+    color: #fff;
+  }
+  
+  .quxiao {
+    color: #fff;
+  }
+  
+  .details-head .btnall .save .icon {
+    position: relative;
+    bottom: 0px;
+    right: 13px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .details-head .btnall .save {
+    background-color: rgb(47 44 44);
+    width: 85px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .details-head .btnall .delete .name {
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    padding-left: 9px;
+  }
+  
+  .namelogin .logicn {
+    color: rgb(131, 131, 131);
+    font-size: 13px;
+  }
+  
+  .title-name .name {
+    background-color: rgb(15, 15, 15);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    height: 25px;
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .main-max {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .main {
+    padding: 20px 0 20px 0;
+  }
+  
+  .detaliwebsite {
+    font-size: 12px;
+    color: #686868;
+  }
+  
+  .duanluo {
+    padding-top: 10px;
+  }
+  
+  .username {
+    padding-bottom: 10px;
+  }
+  
+  .special {
+    color: #fff;
+  }
+  
+  .private p {
+    color: #fff;
+  }
+  
+  .private span {
+    color: #fff;
+  }
+  
+  .max-width {
+    width: 380px;
+    margin: 0 auto;
+  }
+  
+  .main-center {
+    padding-top: 25px;
+  }
+  
+  .max-width button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    margin-left: 15px;
+    border-radius: 5px;
+    background-color: rgb(47 44 44);
+  }
+  
+  .imag {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .imag {
+    position: relative;
+    top: 8px;
+    left: 9px;
+  }
+  
+  .xxx {
+    background-color: rgb(15, 15, 15);
+    border-radius: 4px;
+    border: none;
+    color: #686868;
+    height: 25px;
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .detaliweb {
+    background-color: rgb(15, 15, 15);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    height: 25px;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 17px;   
+    border-bottom: 2px solid #3a3132db;
+  }
+  
+  .bottom .duanluo .great p {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .png {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .dataliweb {
+    background-color: #404040;
+    border-radius: 4px;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    height: 32px;
+    outline: 0;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 20%;
+    padding-left: 15px;
+  }
+  
+  .word {
+    float: left;
+    font-size: 23px;
+  }
+  
+  .word {
+    position: relative;
+    width: 81px;
+    top: 28px;
+  }
+  
+  .margintop {
+    padding-left: 11px;
+    padding-top: 20px;
+  }
+  
+  .margintop {
+    background-color: #404040;
+    border-radius: 4px;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    height: 60px;
+    outline: 0;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+  }
+  
+  .password {
+    margin: 0;
+    font-size: 13px;
+    padding-left: 10px;
+    color: #686868;
+  }
+  
+  .position {
+    position: relative;
+    top: 5px;
+  }
+  
+  .username {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .color {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .email {
+    background-color: rgb(15, 15, 15);
+    border-radius: 4px;
+    font-size: 15px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+  }
+  
+  .email {
+    height: 25px;
+    width: 100%;
+  }
+  
+  .shouandhide {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .shouandhide {
+    position: relative;
+    bottom: 40px;
+    left: 320px;
+  }
+  
+  .copybtn {
+    position: relative;
+    bottom: 40px;
+    left: 330px;
+  }
+  
+  .copybtn {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .cancela .name {
+    color: #fff;
+    font-size: 13px;
+  }
+  
+  .cancela .name {
+    position: relative;
+    top: 2px;
+  }
+  
+  .cancel {
+    width: 20px;
+    height: 18px;
+  }
+  
+  .cancel {
+    position: relative;
+    top: 6px;
+  }
+  
+  .cancela {
+    background-color: rgb(47 44 44);
+    border-radius: 5px;
+  }
+  
+  .cancela {
+    width: 78px;
+    height: 30px;
+  }
