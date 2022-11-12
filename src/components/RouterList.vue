@@ -73,7 +73,7 @@ export default {
 }
 
 .password-jklb {
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 .password-name {
