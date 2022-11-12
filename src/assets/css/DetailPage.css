@@ -119,7 +119,7 @@ img {
   }
   
   .main {
-    padding: 20px 0 20px 0;
+    padding: 25px 0 20px 0;
   }
   
   .detaliwebsite {
@@ -154,6 +154,11 @@ img {
   
   .main-center {
     padding-top: 25px;
+  }
+
+  .main-center{
+    border-bottom: 2px solid #3a3132db;
+    padding-bottom: 20px;
   }
   
   .max-width button {
