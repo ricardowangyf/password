@@ -6,7 +6,7 @@ exports.list = [
       "username":"Username",
       "email": "thomas@gmail.com",
       "websitename": "adobe.com",
-      "website": "https://www.adobe.com/",
+      "website": "adobe.com",
       "deleteAt": "2022/12/01",
       "favorties": true,
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
@@ -18,7 +18,7 @@ exports.list = [
       "imgrul": "/image/Apple.svg",
       "email": "thomas@gmail.com",
       "websitename": "apple.com",
-      "website": "https://www.apple.com/sg/",
+      "website": "apple.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -40,7 +40,7 @@ exports.list = [
       "username":"Username",
       "websitename": "Etsy.com",
       "favorties": true,
-      "website": "https://www.etsy.com/",
+      "website": " etsy.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -51,7 +51,7 @@ exports.list = [
       "username":"Username",
       "favorties": true,
       "websitename": "Facebook.com",
-      "website": "https://www.facebook.com/",
+      "website": " facebook.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -62,7 +62,7 @@ exports.list = [
       "email": "thomas@gmail.com",
       "favorties": true,
       "websitename": "GooGle.com",
-      "website": "https://www.google.com/",
+      "website": "google.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -72,7 +72,7 @@ exports.list = [
       "imgrul": "/image/IMDB.svg",
       "email": "thomas@gmail.com",
       "websitename": "IMDB.com",
-      "website": "https://www.imdb.com/",
+      "website": " imdb.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -82,7 +82,7 @@ exports.list = [
       "email": "thomas@gmail.com",
       "username":"Username",
       "websitename": "InVison.com",
-      "website": "https://www.invisionapp.com/",
+      "website": " invisionapp.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
@@ -92,7 +92,7 @@ exports.list = [
       "imgrul": "/image/Telegram.svg",
       "email": "+1 202 555 0918",
       "websitename": "Telegram.com",
-      "website": "https://telegram.org/",
+      "website": "telegram.org",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   }
 ]
