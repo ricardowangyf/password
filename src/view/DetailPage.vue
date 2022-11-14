@@ -66,7 +66,7 @@
           <div class="third">
             <input
               class="website xxx"
-              :value="state.username"
+              :value="state.details.username"
               :disabled="!state.details.savenow"
             />
           </div>
