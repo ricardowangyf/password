@@ -29,7 +29,7 @@ exports.list = [
       "websitename": "dirbbble.com",
       "email": "thomas@gmail.com",
       "favorties": true,
-      "website": "https://dribbble.com/",
+      "website": "dribbble.com",
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
