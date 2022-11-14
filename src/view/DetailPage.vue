@@ -66,7 +66,7 @@
           <div class="third">
             <input
               class="website xxx"
-              :value="state.details.username"
+              :value="state.username"
               :disabled="!state.details.savenow"
             />
           </div>
@@ -170,7 +170,24 @@ export default {
     //显示隐藏
     changePwd() {
       this.state.pwdFlag = !this.state.pwdFlag;
-    },  
+    },
+    //编辑
+    edit() {
+      if (!this.state.savenow) {
+        this.state.savenow = true;
+      }
+      if (!this.state.nonenow) {
+        this.state.nonenow = true;
+      }
+    },
+    //一键复制
+    copy() {
+      var password = this.state.details.password;
+      var input = document.getElementById("input");
+      input.value = password; // 要复制的文本框的内容（此处是后端返回的内容）
+      input.select(); // 选中文本
+      console.log("-------->", input);
+    },
     //保存
     save() {
       save({ ...this.state.detali }).then((data) => {
@@ -178,7 +195,7 @@ export default {
           (this.state.savenow = false), (this.state.nonenow = false);
           alert("保存成功");
         }
-        console.log("---data-->", data);
+        console.log("----->", data);
       });
     },
     //取消
@@ -191,25 +208,8 @@ export default {
         alert("取消编辑");
       }
     },
-    //编辑
-    edit() {
-      if (!this.state.savenow) {
-        this.state.savenow = true;
-      }
-      if (!this.state.nonenow) {
-        this.state.nonenow = true;
-      }
-    },
     //删除
     Delete() {},
-    //一键复制
-    copy() {
-      var password = this.state.details.password;
-      var input = document.getElementById("input");
-      input.value = password; // 要复制的文本框的内容（此处是后端返回的内容）
-      input.select(); // 选中文本
-      console.log("---input--->", input);
-    },
   },
 };
 </script>

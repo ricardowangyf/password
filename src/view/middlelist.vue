@@ -98,6 +98,7 @@ export default {
         for (var i = 0; i < this.tableData.length; i++) {
           if (this.tableData[i].name === this.state.keyWord) {
             dataLists.push(this.tableData[i]);
+            console.log("---this.tableData--->", this.tableData);
           }
         }
       } else {
