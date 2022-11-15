@@ -5,8 +5,8 @@
       <div class="header-right">
         <div class="btnall">
           <button v-if="!state.savenow" class="edit" @click="edit">
-            <img src="../assets/imgs/edit.svg" class="icon" />
-            <span class="name">Edit</span>
+            <img src="../assets/imgs/edit.svg" class="icon" style="position: relative; right: 9px; top: 1px;"/>
+            <span class="name" >Edit</span>
           </button>
           <button v-else class="edit" @click="save">
             <img src="../assets/imgs/save.svg" class="icon" />
@@ -21,7 +21,7 @@
           <button @click="Delete()">
             <div class="delete">
               <img src="../assets/imgs/delete.svg" class="icon" />
-              <span class="name">Delete</span>
+              <span class="name" style="bottom: 0px;">Delete</span>
             </div>
           </button>
         </div>
