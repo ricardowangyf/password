@@ -20,13 +20,14 @@
           </div>
         </div>
         <div class="button">
-          <div v-if="state.items && state.items.length > 0">
-            <li v-for="(item, i) in state.items" :key="item.name">
-              <router-link :to="`/list/${type}/detail/${item.name}`">
+          <div v-if="state.items && state.items.length > 0" >
+            <li v-for="(item, i) in state.items" :key="item.name" >
+              <router-link :to="`/list/${type}/detail/${item.name}`" >
                 <RouterList
                   :title="item.name"
                   :des="item.email"
                   :eal="item.url"
+                  
                   :class="
                     state.name === item.name || (i === 0 && !state.name)
                       ? 'is-active'

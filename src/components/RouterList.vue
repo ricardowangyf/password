@@ -5,7 +5,7 @@
       <img :src="eal" style="border-radius: 5px" />
     </div>
     <div class="password-right">
-      <div class="password-jkl">
+      <div class="password-content">
         <h1 class="name">{{ title }}</h1>
         <h2 class="des">{{ des }}</h2>
       </div>

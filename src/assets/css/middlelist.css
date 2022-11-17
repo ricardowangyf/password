@@ -19,9 +19,11 @@ a {
   text-decoration: none;
 }
 
-.is-active {
+.isactive{
+  border-radius: 5px;
   background-color: #005fe4;
 }
+
 .claer {
   clear: both;
 }
@@ -215,8 +217,8 @@ a {
   left: 3px;
 }
 
-.password-jkl {
-  padding-left: 12px;
+.password-content {
+  padding-left: 15px;
   text-decoration: none;
 }
 

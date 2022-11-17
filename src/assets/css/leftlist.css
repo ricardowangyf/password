@@ -101,11 +101,6 @@ li {
   height: 15px;
 }
 
-.icon {
-  position: relative;
-  top: 2px;
-}
-
 .itemname {
   color: #fff;
   margin: 0;
@@ -115,14 +110,20 @@ li {
   border-radius: 5px;
 }
 
-.itemname {
-  width: 77%;
+.fontsize{
+  width: 75%
 }
 
 .number {
   color: #dcdfe633;
   font-size: 13px;
-  padding: 2px 15px 0px 0px;
+  padding-right: 10px
+}
+
+.icon-trash{
+  position: relative;
+  left: 4px;
+  top: 3px;
 }
 
 .neirong {
@@ -151,12 +152,16 @@ li {
 .icon-login {
   position: relative;
   top: 4px;
-  left: 7px;
+  left: 10px;
 }
 
 .icon-login {
   width: 15px;
   height: 15px;
+}
+
+.note{
+  padding-top: 2px;
 }
 
 .itemstypename {
