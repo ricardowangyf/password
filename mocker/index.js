@@ -17,6 +17,7 @@ const proxy = {
             "email": "thomas@gmail.com",
             "url": "/image/Adobe.svg",
             "Trash": "2022/12/01",
+            "deleteAt": "2022/12/01",
         },
         {
             "name": "Apple",
