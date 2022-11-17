@@ -8,8 +8,8 @@ import RouterList from '../components/RouterList.vue' //路由内容
 
 const router = createRouter({
   history: createWebHashHistory(),
+  linkActiveClass: 'isactive',
   mode: 'history',
-  linkActiveClass: 'is-active',
   routes: [
     {
       path: '/',
