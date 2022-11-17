@@ -42,9 +42,6 @@ const proxy = {
             "name": "Facebook",
             "email": "thomas@gmail.com",
             "url": "/image/Facebook.svg",
-            "deleteAt": "2022/12/01",
-            "Trash": "2022/12/01",
-            "favorties": true,
         },
         {
             "name": "GooGle",

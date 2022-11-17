@@ -7,8 +7,6 @@ exports.list = [
       "email": "thomas@gmail.com",
       "websitename": "adobe.com",
       "website": "adobe.com",
-      "deleteAt": "2022/12/01",
-      "favorties": true,
       "paragraph": "Great experiences have the power to inspire, transform and movethe world forward.And every great experience starts withcreativity"
   },
   {
