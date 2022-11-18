@@ -2,7 +2,7 @@
   <!-- 路由内容 -->
   <div class="password-all">
     <div class="bottonleft">
-      <img :src="eal" style="border-radius: 5px" />
+      <img :src="eal" class="fillet"/>
     </div>
     <div class="password-right">
       <div class="password-content">

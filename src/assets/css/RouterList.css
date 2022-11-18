@@ -5,6 +5,10 @@
   font-size: 15px;
 }
   
+.fillet{
+  border-radius: 5px;
+}
+
 .des {
   margin: 0;
   font-size: 12px;
