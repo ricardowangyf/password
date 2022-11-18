@@ -286,7 +286,11 @@ img {
 .margintop{
   width: 100%;
   height: 60px;
+}
 
+.imgurl{
+  position: relative;
+  top: 2px;
 }
 
 .password {
@@ -298,7 +302,7 @@ img {
 
 .position {
   position: relative;
-  top: 5px;
+  top: 2px;
 }
 
 .username {

@@ -33,7 +33,7 @@
             <div class="password-left position">
               <img
                 :src="state.details.imgrul"
-                class="img"
+                class="img imgurl"
               />
             </div>
             <div class="title-name">
