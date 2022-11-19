@@ -16,19 +16,21 @@ const proxy = {
             "name": "Adobe",
             "email": "thomas@gmail.com",
             "url": "/image/Adobe.svg",
-            "Trash": "2022/12/01",
+            "favorties": true,
             "deleteAt": "2022/12/01",
+            "Trash": "2022/12/01",
         },
         {
             "name": "Apple",
             "email": "thomas@gmail.com",
+            "favorties": true,
+            "deleteAt": "2022/12/01",
             "url": "/image/Apple.svg",
         },
         {
             "name": "Dirbbble",
             "email": "thomas@gmail.com",
             "url": "/image/Dribbble.svg",
-            "deleteAt": "2022/12/01",
             "favorties": true,
             "Trash": "2022/12/01",
         },
@@ -36,7 +38,6 @@ const proxy = {
             "name": "Etsy",
             "email": "thomas@gmail.com",
             "url": "/image/Etsy.svg",
-            "deleteAt": "2022/12/01",
             "favorties": true,
         },
         {
@@ -48,7 +49,6 @@ const proxy = {
             "name": "GooGle",
             "email": "thomas@gmail.com",
             "url": "/image/Google.svg",
-            "deleteAt": "2022/12/01",
             "favorties": true,
         },
         {
@@ -60,7 +60,6 @@ const proxy = {
         {
             "name": "InVison",
             "email": "thomas@gmail.com",
-            "deleteAt": "2022/12/01",
             "url": "/image/Invision.svg"
         },
         {

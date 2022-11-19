@@ -19,7 +19,7 @@ const router = createRouter({
         {
           path: '/list/:type',
           component: middlelist,
-          props: true
+          props: true 
         },
         {
           path: '/list/:type/detail/:name',
@@ -39,8 +39,8 @@ const router = createRouter({
       ]
     },
     {
-      path: '/',
-      name: '404',
+      path: '/:pathMatch(.*)',
+      name: '/404',
       component: NotFound
     },
   ]

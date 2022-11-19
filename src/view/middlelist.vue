@@ -6,9 +6,9 @@
         <div class="serch">
           <div class="inputandcion">
             <input
-              v-model.trim="state.keyWord"
+              v-model.trim="keyWord"
               class="inputstlye"
-              :placeholder="state.SearchVault"
+              :placeholder="SearchVault"
             />
             <button class="sousuo" @click="serch">
               <img class="hualigs" src="../assets/imgs/search.svg" alt />
@@ -20,17 +20,16 @@
           </div>
         </div>
         <div class="button">
-          <div v-if="state.items && state.items.length > 0" >
-            <li v-for="(item, i) in state.items" :key="item.name" >
-              <router-link :to="`/list/${type}/detail/${item.name}`" >
+          <div v-if="items && items.length > 0">
+            <li v-for="(item, i) in items" :key="item.name">
+              <router-link :to="`/list/${type}/detail/${item.name}`">
                 <RouterList
                   :title="item.name"
                   :des="item.email"
                   :eal="item.url"
-                  
                   :class="
-                    state.name === item.name || (i === 0 && !state.name)
-                      ? 'is-active'
+                    name === item.name || (i === 0 && !name)
+                      ? 'isactive'
                       : undefined
                   "
                 />
@@ -45,7 +44,6 @@
 </template>
 
 <script>
-import { reactive } from "vue";
 import DetailPage from "./DetailPage";
 import { reqCategoryList } from "../API/index";
 import RouterList from "../components/RouterList.vue";
@@ -58,25 +56,20 @@ export default {
     RouterList,
     DetailPage,
   },
-  setup() {
-    const state = reactive({
-      //数据
+  data() {
+    return {
       items: [],
-      name: " ",
+      name: "",
       keyWord: " ",
       SearchVault: "SearchVault",
-    });
-    return {
-      state,
     };
   },
-
   mounted() {
     reqCategoryList().then((data) => {
       this.tableData = data.data;
       const type = this.$route.params.type || "all";
       this.filterDatas(type, data.data);
-      console.log("----this.tableData--->", data.data);
+      console.log("this.tableData", data.data);
     });
   },
   watch: {
@@ -88,40 +81,43 @@ export default {
         if (newType && newType !== oldType) {
           this.filterDatas(newType, this.tableData);
         }
-        console.log("---tableData--->", this.tableData);
+        console.log("tableData", this.tableData);
       },
     },
   },
   methods: {
     serch() {
       var dataLists = [];
-      if (this.state.keyWord) {
+      if (this.keyWord) {
         for (var i = 0; i < this.tableData.length; i++) {
-          if (this.tableData[i].name === this.state.keyWord) {
+          if (this.tableData[i].name === this.keyWord) {
             dataLists.push(this.tableData[i]);
-            console.log("---this.tableData--->", this.tableData);
+            console.log("this.tableData", this.tableData);
           }
         }
       } else {
         dataLists = this.tableData;
       }
-      this.state.items = [...dataLists];
-      console.log("---this.state.items--->", this.state.items);
-      console.log("---dataLists--->", dataLists);
+      this.items = [...dataLists];
+      console.log("this.items", this.items);
+      console.log("dataLists", dataLists);
     },
     filterDatas(type, list) {
-      if (type === "Trash") {
-        this.state.items = list.filter((item) => item.deleteAt);
-      } else if (type === "favorites") {
-        this.state.items = list.filter((item) => item.favorties);
-      } else {
-        this.state.items = list;
+      if (type === "trash") {
+        this.items = list.filter((item) => item.deleteAt);
+      } 
+      else if (type === "favorites") {
+        this.items = list.filter((item) => item.favorties);
+      } 
+      else {
+        this.items = list;
       }
-      console.log("---list--->", list);
-      this.state.items &&
-        this.state.items.length > 0 &&
+      console.log(" this.items",  this.items);
+      console.log('-------->' ,type)
+      this.items &&
+        this.items.length > 0 &&
         this.$router
-          .push(`/list/${type}/detail/${this.state.items[0].name}`)
+          .push(`/list/${type}/detail/${this.items[0].name}`)
           .catch((err) => {
             console.log(err);
           });

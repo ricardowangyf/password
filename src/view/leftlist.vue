@@ -118,11 +118,11 @@ export default {
       var trashNum = 0;
       data.data &&
         data.data.length > 0 &&
-        data.data.forEach((item) => {
-          if (item.deleteAt) {
+        data.data.forEach((state) => {
+          if (state.deleteAt) {
             trashNum = trashNum + 1;
           }
-          if (item.favorties) {
+          if (state.favorties) {
             favoritesNum += 1;
           }
         });
