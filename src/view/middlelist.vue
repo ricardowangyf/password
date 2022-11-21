@@ -112,8 +112,8 @@ export default {
       else {
         this.items = list;
       }
-      console.log(" this.items",  this.items);
-      console.log('-------->' ,type)
+      console.log("this.items",  this.items);
+      console.log('type:  ' ,type)
       this.items &&
         this.items.length > 0 &&
         this.$router

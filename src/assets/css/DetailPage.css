@@ -137,6 +137,11 @@ img {
   width: 100%;
 }
 
+.favorites{
+  width: 27px; 
+  height: 27px;
+}
+
 .main-max {
   display: flex;
   align-items: center;

@@ -48,16 +48,16 @@
                   style="width: 27px; height: 27px"
                 /> -->
               <img
+              class="favorites"
                 v-if="details.favorties"
                 @click="changeImg = true"
                 src="../assets/imgs/收藏.svg"
-                style="width: 27px; height: 27px"
               />
               <img
+              class="favorites"
                 v-if="!details.favorties"
                 @click="changeImg = true"
                 src="../assets/imgs/未收藏.svg"
-                style="width: 27px; height: 27px"
               />
             </div>
           </div>
