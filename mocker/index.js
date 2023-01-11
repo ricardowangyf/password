@@ -10,7 +10,6 @@ const proxy = {
     ...user,
     ...save,
     ...detalis,
-    
     'GET /api/user/list': [
         {
             "name": "Adobe",

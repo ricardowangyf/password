@@ -105,15 +105,13 @@ export default {
     filterDatas(type, list) {
       if (type === "trash") {
         this.items = list.filter((item) => item.deleteAt);
-      } 
-      else if (type === "favorites") {
+      } else if (type === "favorites") {
         this.items = list.filter((item) => item.favorties);
-      } 
-      else {
+      } else {
         this.items = list;
       }
-      console.log("this.items",  this.items);
-      console.log('type:  ' ,type)
+      console.log("this.items", this.items);
+      console.log("type:  ", type);
       this.items &&
         this.items.length > 0 &&
         this.$router
