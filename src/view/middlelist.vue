@@ -21,7 +21,7 @@
         </div>
         <div class="button">
           <div v-if="items && items.length > 0">
-            <li v-for="(item, i) in items" :key="item.name">
+            <li v-for="(item,i) in items" :key="item.name">
               <router-link :to="`/list/${type}/detail/${item.name}`">
                 <RouterList
                   :title="item.name"
