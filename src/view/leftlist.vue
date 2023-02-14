@@ -7,10 +7,7 @@
           <div class="item itemcenter">
             <router-link to="/list/items" class="isactive">
               <li class="dispalay">
-                <img
-                  src="../assets/imgs/items.svg"
-                  class="icon icon-trash"
-                />
+                <img src="../assets/imgs/items.svg" class="icon icon-trash" />
                 <h1 class="itemname fontsize">All items</h1>
                 <span class="number" style="padding-right: 10px">{{
                   state.allNum
@@ -19,12 +16,9 @@
             </router-link>
             <router-link to="/list/favorites">
               <li class="dispalay">
-                <img
-                  src="../assets/imgs/favourites.svg"
-                  class="icon icon-trash"
-                />
+                <img src="../assets/imgs/favourites.svg" class="icon icon-trash" />
                 <h1 class="itemname fontsize">favorites</h1>
-                <span class="number" >{{
+                <span class="number">{{
                   state.favoritesNum
                 }}</span>
               </li>

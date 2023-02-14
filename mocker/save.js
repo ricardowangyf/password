@@ -10,4 +10,5 @@ const proxy = {
         });
       },
 }
+
 module.exports = proxy, noProxy, delay;
