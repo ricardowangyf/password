@@ -1,15 +1,10 @@
-<template>
-  <!--路由转跳-->
+<template><!--路由转跳-->
   <div class="middleheader">
     <div class="middleheader-center scorall">
       <div class="middlecenter">
         <div class="serch">
           <div class="inputandcion">
-            <input
-              v-model.trim="keyWord"
-              class="inputstlye"
-              :placeholder="SearchVault"
-            />
+            <input v-model.trim="keyWord" class="inputstlye" :placeholder="SearchVault" />
             <button class="sousuo" @click="serch">
               <img class="hualigs" src="../assets/imgs/search.svg" alt />
               <div class="claer" />
@@ -21,18 +16,13 @@
         </div>
         <div class="button">
           <div v-if="items && items.length > 0">
-            <li v-for="(item,i) in items" :key="item.name">
+            <li v-for="(item, i) in items" :key="item.name">
               <router-link :to="`/list/${type}/detail/${item.name}`">
-                <RouterList
-                  :title="item.name"
-                  :des="item.email"
-                  :eal="item.url"
-                  :class="
-                    name === item.name || (i === 0 && !name)
-                      ? 'isactive'
-                      : undefined
-                  "
-                />
+                <RouterList :title="item.name" :des="item.email" :eal="item.url" :class="
+                  name === item.name || (i === 0 && !name)
+                    ? 'isactive'
+                    : undefined
+                " />
               </router-link>
             </li>
           </div>
@@ -103,14 +93,14 @@ export default {
       console.log("dataLists", dataLists);
     },
     filterDatas(type, list) {
-      if (type === "trash") {
+      if (type === "Trash") {
         this.items = list.filter((item) => item.deleteAt);
       } else if (type === "favorites") {
         this.items = list.filter((item) => item.favorties);
       } else {
         this.items = list;
       }
-      console.log("this.items", this.items);
+      // console.log("------xxxxthis.items", this.items);
       console.log("type:  ", type);
       this.items &&
         this.items.length > 0 &&

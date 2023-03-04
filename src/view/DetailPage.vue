@@ -1,5 +1,4 @@
-<template>
-  <!-- 详情页 -->
+<template><!-- 详情页 -->
   <div class="details-head">
     <div class="max-width">
       <div class="header-right">
@@ -28,11 +27,7 @@
         <div class="main-center">
           <div class="main-max">
             <div class="password-left position">
-              <img
-                :src="details.imgrul"
-                class="img"
-                style="border-radius: 5px"
-              />
+              <img :src="details.imgrul" class="img" style="border-radius: 5px" />
             </div>
             <div class="title-name">
               <input :disabled="!savenow" v-model="details.name" class="name" />
@@ -42,33 +37,19 @@
             </div>
             <div class="collection">
               <!-- <img
-                  v-if="detali.favorties" 
-                  @click="changeImg = true"
-                  :src="getSrc()"
-                  style="width: 27px; height: 27px"
-                /> -->
-              <img
-              class="favorites"
-                v-if="details.favorties"
-                @click="changeImg = true"
-                src="../assets/imgs/收藏.svg"
-              />
-              <img
-              class="favorites"
-                v-if="!details.favorties"
-                @click="changeImg = true"
-                src="../assets/imgs/未收藏.svg"
-              />
+                    v-if="detali.favorties" 
+                    @click="changeImg = true"
+                    :src="getSrc()"
+                    style="width: 27px; height: 27px"
+                  /> -->
+              <img class="favorites" v-if="details.favorties" @click="changeImg = true" src="../assets/imgs/收藏.svg" />
+              <img class="favorites" v-if="!details.favorties" @click="changeImg = true" src="../assets/imgs/未收藏.svg" />
             </div>
           </div>
         </div>
         <div class="main">
           <div class="third">
-            <input
-              class="website xxx"
-              :value="details.username"
-              :disabled="!savenow"
-            />
+            <input class="website xxx" :value="details.username" :disabled="!savenow" />
           </div>
           <div class="web">
             <input class="email" v-model="details.email" :disabled="!savenow" />
@@ -81,54 +62,35 @@
               </div>
               <div class="clear" />
               <form>
-                <input
-                  :disabled="!savenow"
-                  v-model="details.password"
-                  :type="pwdFlag ? 'password' : 'text'"
-                  size="10"
-                  id="input"
-                  class="margintop"
-                  autoComplete="“false”"
-                />
+                <input :disabled="!savenow" v-model="details.password" :type="pwdFlag ? 'password' : 'text'" size="10"
+                  id="input" class="margintop" autoComplete="“false”" />
               </form>
-              <img
-                :src="pwdFlag ? textIcon : eyesicon"
-                @click="changePwd"
-                class="shouandhide"
-              />
-              <img
-                src="../assets/imgs/copy.svg"
-                @click="copy"
-                class="copybtn"
-              />
+              <img :src="pwdFlag ? textIcon : eyesicon" @click="changePwd" class="shouandhide" />
+              <img src="../assets/imgs/copy.svg" @click="copy" class="copybtn" />
             </div>
           </div>
           <div class="detaliwebsite bottom-horizontalline">
-              <span>Website</span>
-              </div>
-            <input
-              :value="details.website"
-              class="detaliweb"
-              :disabled="!savenow"
-            />
+            <span>Website</span>
           </div>
-          <div class="asdasdergrg">
-            <div class="bottom">
-              <div class="duanluo">
-                <div class="xxx">
-                  <span class="aaaaa">Notes</span>
-                </div>
-                <div class="great">
-                  <p id="demo">
-                    {{ details.paragraph }}
-                  </p>
-                </div>
+          <input :value="details.website" class="detaliweb" :disabled="!savenow" />
+        </div>
+        <div class="asdasdergrg">
+          <div class="bottom">
+            <div class="duanluo">
+              <div class="xxx">
+                <span class="aaaaa">Notes</span>
+              </div>
+              <div class="great">
+                <p id="demo">
+                  {{ details.paragraph }}
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
 import { details, save } from "../API/index";
@@ -207,7 +169,7 @@ export default {
       }
     },
     //删除
-    Delete() {},
+    Delete() { },
   },
 };
 </script>
