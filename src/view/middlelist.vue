@@ -1,4 +1,5 @@
-<template><!--路由转跳-->
+<template>
+<!--路由转跳-->
   <div class="middleheader">
     <div class="middleheader-center scorall">
       <div class="middlecenter">
@@ -100,7 +101,6 @@ export default {
       } else {
         this.items = list;
       }
-      // console.log("------xxxxthis.items", this.items);
       console.log("type:  ", type);
       this.items &&
         this.items.length > 0 &&

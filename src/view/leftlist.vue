@@ -16,20 +16,19 @@
             </router-link>
             <router-link to="/list/favorites">
               <li class="dispalay">
-                <img src="../assets/imgs/favourites.svg" class="icon icon-trash" />
+                <img
+                  src="../assets/imgs/favourites.svg"
+                  class="icon icon-trash"
+                />
                 <h1 class="itemname fontsize">favorites</h1>
-                <span class="number">{{
-                  state.favoritesNum
-                }}</span>
+                <span class="number">{{ state.favoritesNum }}</span>
               </li>
             </router-link>
             <router-link to="/list/trash">
               <li class="dispalay">
                 <img src="../assets/imgs/trash.svg" class="icon icon-trash" />
                 <h1 class="itemname fontsize" style="">Trash</h1>
-                <span class="number">{{
-                  state.trashNum
-                }}</span>
+                <span class="number">{{ state.trashNum }}</span>
               </li>
             </router-link>
           </div>
@@ -50,7 +49,10 @@
                   <h1 class="itemstypename">Identity</h1>
                 </router-link>
                 <router-link to="/list/securenote" class="flexstart trash">
-                  <img src="../assets/imgs/securenote.svg" class="icon-login note" />
+                  <img
+                    src="../assets/imgs/securenote.svg"
+                    class="icon-login note"
+                  />
                   <h1 class="itemstypename">Secure Note</h1>
                 </router-link>
               </div>
