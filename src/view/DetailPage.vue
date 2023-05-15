@@ -1,4 +1,5 @@
-<template><!-- 详情页 -->
+<template>
+  <!-- 详情页 -->
   <div class="details-head">
     <div class="max-width">
       <div class="header-right">
@@ -27,7 +28,11 @@
         <div class="main-center">
           <div class="main-max">
             <div class="password-left position">
-              <img :src="details.imgrul" class="img" style="border-radius: 5px" />
+              <img
+                :src="details.imgrul"
+                class="img"
+                style="border-radius: 5px"
+              />
             </div>
             <div class="title-name">
               <input :disabled="!savenow" v-model="details.name" class="name" />
@@ -42,14 +47,28 @@
                     :src="getSrc()"
                     style="width: 27px; height: 27px"
                   /> -->
-              <img class="favorites" v-if="details.favorties" @click="changeImg = true" src="../assets/imgs/收藏.svg" />
-              <img class="favorites" v-if="!details.favorties" @click="changeImg = true" src="../assets/imgs/未收藏.svg" />
+              <img
+                class="favorites"
+                v-if="details.favorties"
+                @click="changeImg = true"
+                src="../assets/imgs/收藏.svg"
+              />
+              <img
+                class="favorites"
+                v-if="!details.favorties"
+                @click="changeImg = true"
+                src="../assets/imgs/未收藏.svg"
+              />
             </div>
           </div>
         </div>
         <div class="main">
           <div class="third">
-            <input class="website xxx" :value="details.username" :disabled="!savenow" />
+            <input
+              class="website xxx"
+              :value="details.username"
+              :disabled="!savenow"
+            />
           </div>
           <div class="web">
             <input class="email" v-model="details.email" :disabled="!savenow" />
@@ -62,17 +81,36 @@
               </div>
               <div class="clear" />
               <form>
-                <input :disabled="!savenow" v-model="details.password" :type="pwdFlag ? 'password' : 'text'" size="10"
-                  id="input" class="margintop" autoComplete="“false”" />
+                <input
+                  :disabled="!savenow"
+                  v-model="details.password"
+                  :type="pwdFlag ? 'password' : 'text'"
+                  size="10"
+                  id="input"
+                  class="margintop"
+                  autoComplete="“false”"
+                />
               </form>
-              <img :src="pwdFlag ? textIcon : eyesicon" @click="changePwd" class="shouandhide" />
-              <img src="../assets/imgs/copy.svg" @click="copy" class="copybtn" />
+              <img
+                :src="pwdFlag ? textIcon : eyesicon"
+                @click="changePwd"
+                class="shouandhide"
+              />
+              <img
+                src="../assets/imgs/copy.svg"
+                @click="copy"
+                class="copybtn"
+              />
             </div>
           </div>
           <div class="detaliwebsite bottom-horizontalline">
             <span>Website</span>
           </div>
-          <input :value="details.website" class="detaliweb" :disabled="!savenow" />
+          <input
+            :value="details.website"
+            class="detaliweb"
+            :disabled="!savenow"
+          />
         </div>
         <div class="asdasdergrg">
           <div class="bottom">
@@ -110,7 +148,7 @@ export default {
   watch: {
     $route: {
       handler(newVal) {
-        console.log("newVal", newVal);
+        // console.log("newVal", newVal);
         newVal && this.getdetail();
       },
     },
@@ -124,7 +162,7 @@ export default {
       name &&
         details({ name }).then((data) => {
           this.details = data.data;
-          console.log("this.details", this.details);
+          // console.log("this.details", this.details);
         });
     },
     //显示隐藏
@@ -169,7 +207,7 @@ export default {
       }
     },
     //删除
-    Delete() { },
+    Delete() {},
   },
 };
 </script>

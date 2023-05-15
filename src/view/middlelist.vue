@@ -1,11 +1,15 @@
 <template>
-<!--路由转跳-->
+  <!--路由转跳-->
   <div class="middleheader">
     <div class="middleheader-center scorall">
       <div class="middlecenter">
         <div class="serch">
           <div class="inputandcion">
-            <input v-model.trim="keyWord" class="inputstlye" :placeholder="SearchVault" />
+            <input
+              v-model.trim="keyWord"
+              class="inputstlye"
+              :placeholder="SearchVault"
+            />
             <button class="sousuo" @click="serch">
               <img class="hualigs" src="../assets/imgs/search.svg" alt />
               <div class="claer" />
@@ -19,11 +23,16 @@
           <div v-if="items && items.length > 0">
             <li v-for="(item, i) in items" :key="item.name">
               <router-link :to="`/list/${type}/detail/${item.name}`">
-                <RouterList :title="item.name" :des="item.email" :eal="item.url" :class="
-                  name === item.name || (i === 0 && !name)
-                    ? 'isactive'
-                    : undefined
-                " />
+                <RouterList
+                  :title="item.name"
+                  :des="item.email"
+                  :eal="item.url"
+                  :class="
+                    name === item.name || (i === 0 && !name)
+                      ? 'isactive'
+                      : undefined
+                  "
+                />
               </router-link>
             </li>
           </div>
@@ -60,7 +69,7 @@ export default {
       this.tableData = data.data;
       const type = this.$route.params.type || "all";
       this.filterDatas(type, data.data);
-      console.log("this.tableData", data.data);
+      console.log("this.tableData", type);
     });
   },
   watch: {
