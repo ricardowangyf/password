@@ -19,7 +19,7 @@ const router = createRouter({
         {
           path: '/list/:type',
           component: middlelist,
-          props: true
+          props: true 
         },
         {
           path: '/list/:type/detail/:name',

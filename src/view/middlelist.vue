@@ -25,7 +25,7 @@
               <router-link :to="`/list/${type}/detail/${item.name}`">
                 <RouterList
                   :title="item.name"
-                  :des="item.email"
+                  :des="item.email" 
                   :eal="item.url"
                   :class="
                     name === item.name || (i === 0 && !name)
@@ -95,6 +95,7 @@ export default {
             console.log("this.tableData", this.tableData);
           }
         }
+        
       } else {
         dataLists = this.tableData;
       }
